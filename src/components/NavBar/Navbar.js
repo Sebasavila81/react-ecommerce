@@ -5,20 +5,10 @@ const NavBar = () => {
 
 
         <div>
-            {/* <section className="hero is-danger">
-                <div className="hero-body">
-                    <p className="title">
-                        SUPLEMENTOS DEPORTIVOS
-                    </p>
-                    <p className="subtitle">
-                        Danger subtitle
-                    </p>
-                </div>
-            </section> */}
-            < nav className="navbar" role="navigation" ariaLabel="main navigation" >
+            < nav className="navbar" role="navigation" aria-label="main navigation" >
                 <div className="navbar-brand">
                     <a className="navbar-item" href="https://bulma.io">
-                        {/* <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> */}
+                     
                     </a>
 
                     <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
