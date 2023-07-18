@@ -1,5 +1,7 @@
+import ItemCount from "../ItemCount/ItemCount"
 const ItemListContainer = ({ greeting }) => {
     return (
+        
         <div className="content">
             <div className="columns">
                 <div className="column">
@@ -32,7 +34,7 @@ const ItemListContainer = ({ greeting }) => {
                 </div>
 
             </div>
-
+            <ItemCount/>
         </div>
 
 
