@@ -15,14 +15,14 @@ const ItemList = () => {
             title: "Creatina",
             description: "Las creatinas son ideales para prevenir la fatiga. A menos fatiga muscular más será tu rendimiento en el entrenamiento. También son excelentes suplementos naturales que ayudan a maximizar la recuperación del músculo luego del entrenamiento",
             price: 5000,
-            pictureUrl: 'assets/images/imgCreatina.jpg'
+            pictureUrl: 'assets/images/imgCreatina.png'
         },
         {
             id: 3,
             title: "Quemadores",
             description: "Son ideales para energizarte y bajar de peso rápidamente",
             price: 3000,
-            pictureUrl: 'assets/images/imgQuemador.jpg'
+            pictureUrl: 'assets/images/imgQuemador.png'
         }
 
         ];
