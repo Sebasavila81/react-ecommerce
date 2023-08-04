@@ -37,6 +37,8 @@ const ItemCount = () => {
     }
     const [contador, setContador] = useState(0);
 
+    console.log(stock)
+
     return (
         <div className="columns">
             <div className="column">
@@ -50,7 +52,7 @@ const ItemCount = () => {
                 <button onClick={handleClickSuma} className="button is-danger">
                     <span>+</span>
                 </button>
-                <button onClick={handleClickOnAdd} className="button is-danger">
+                <button onClick={handleClickOnAdd} disabled={true ? stock<contador : false} className="button is-danger">
                     <span>AGREGAR AL CARRITO</span>
                 </button>
             </div>

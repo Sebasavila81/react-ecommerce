@@ -1,13 +1,19 @@
-import { Image } from "react";
+import { Image, useState } from "react";
+import ItemDetail from "../ItemDetail/ItemDetail";
+const Item = ({stock, title, price, description, pictureUrl }) => {    
+  const [modal, setModal] = useState (false);
+  
+  const handlerClickDetail = ()=> {
+    setModal(!modal)
+  }
 
-const Item = ({title, price, desc, img }) => {
 
     return (
         <div className="column">
         <div className="card">
         <div className="card-image">
           <figure className="image is-4by3">
-            <img src={img} alt={title} />
+            <img onClick = {handlerClickDetail} src={pictureUrl} alt={title} />
           </figure>
         </div>
         <div className="card-content">
@@ -19,10 +25,11 @@ const Item = ({title, price, desc, img }) => {
           </div>
       
           <div className="content">
-          {desc}.
+          {description}.
           </div>
         </div>
       </div>
+       <ItemDetail stock={stock} title={title} description={description} price={price} pictureUrl={pictureUrl} estadoModal={modal} closeModal={handlerClickDetail} />
       </div>
     )
 }

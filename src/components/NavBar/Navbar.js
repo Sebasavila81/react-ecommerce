@@ -3,68 +3,72 @@ import CartWidget from "../CartWidget/CartWidget"
 const NavBar = () => {
     return (
         <div>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="assets/images/logo.png" width="80" height="28"/>
-    </a>
+            <nav className="navbar" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand">
+                    <a className="navbar-item" href="https://bulma.io">
+                        <img src="assets/images/logo.png" width="80" height="28" />
+                    </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+                    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Inicio
-      </a>
+                <div id="navbarBasicExample" className="navbar-menu">
+                    <div className="navbar-start">
+                        <a className="navbar-item">
+                            Inicio
+                        </a>
 
-      <a class="navbar-item">
-        Contacto
-      </a>
+                        <a className="navbar-item">
+                            Contacto
+                        </a>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          Productos
-        </a>
+                        <div className="navbar-item has-dropdown is-hoverable">
+                            <a className="navbar-link">
+                                Productos
+                            </a>
 
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            Proteinas
-          </a>
-          <a class="navbar-item">
-            Creatinas
-          </a>
-          <a class="navbar-item">
-            Quemadores
-          </a>
-          
+                            <div className="navbar-dropdown">
+                                <a className="navbar-item">
+                                    Proteinas
+                                </a>
+                                <a className="navbar-item">
+                                    Creatinas
+                                </a>
+                                <a className="navbar-item">
+                                    Quemadores
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="navbar-end">
+                        <div classNameName="navbar-item">
+                            <CartWidget cantidad={3}/>
+                        </div>
+                        <div className="navbar-item">
+                            <div className="buttons">
+                                
+                                <a className="button is-primary">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a className="button is-light">
+                                    Log in
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-      </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-        </div>
-       
 
 
-        
+
+
     )
 }
 export default NavBar        
