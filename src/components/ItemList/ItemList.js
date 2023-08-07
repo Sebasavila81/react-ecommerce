@@ -2,7 +2,7 @@ import Item from "../Item/Item";
 import { useEffect, useState } from "react";
 import { getProductosAll, getProductosByID } from "../asyncMock";
 
-const ItemList = () => {
+const ItemList = ({categoria}) => {
     useEffect(() => {
         
         getProductosAll()
@@ -13,15 +13,14 @@ const ItemList = () => {
 
     const [catalogo, setCatalogo] = useState([])
 
-    console.log(catalogo) 
-    
-   
+    const catalogoFiltrado = catalogo.filter((el) => el.categoria == categoria)
+    console.log(catalogoFiltrado)
 
     return (
         <div>
             <div className="container">
             <div className="columns">
-            { catalogo.map((el) => <Item key={el.id} {...el} />)}
+             {categoria ? (catalogoFiltrado.map((el) => <Item key={el.id} {...el}/> )) : (catalogo.map((el) => <Item key={el.id} {...el}/> ))}
             </div></div>
         </div> )
 

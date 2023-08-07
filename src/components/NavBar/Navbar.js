@@ -6,7 +6,7 @@ const NavBar = () => {
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
                     <a className="navbar-item" href="https://bulma.io">
-                        <img src="assets/images/logo.png" width="80" height="28" />
+                        <img src="/assets/images/logo.png" width="80" height="28" />
                     </a>
 
                     <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -47,7 +47,7 @@ const NavBar = () => {
                     </div>
 
                     <div className="navbar-end">
-                        <div classNameName="navbar-item">
+                        <div className="navbar-item">
                             <CartWidget cantidad={3}/>
                         </div>
                         <div className="navbar-item">
