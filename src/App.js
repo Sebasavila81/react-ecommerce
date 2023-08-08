@@ -8,11 +8,13 @@ function App () {
     return (
         <div>
 
-            <NavBar/>
+
             <BrowserRouter>
+            <NavBar/>
                 <Routes>
-                    <Route path="/" element={<ItemListContainer greeting="Hola"/>}/>
-                    <Route path="/categoria/:idCategoria" element={<ItemListContainer greeting="Hola"/>}/>
+                    <Route exact path="/" element={<ItemListContainer />}/>
+                    <Route path="/productos" element={<ItemListContainer />}/>
+                    <Route path="/categoria/:idCategoria" element={<ItemListContainer />}/>
 
                 </Routes>
             </BrowserRouter>

@@ -9,10 +9,10 @@ const Item = ({stock, title, price, description, pictureUrl }) => {
 
 
     return (
-        <div className="column">
+        <div className="column is-one-third">
         <div className="card">
-        <div className="card-image">
-          <figure className="image is-4by3">
+        <div className="card-image is-justify-content-center">
+          <figure className="image is-3by2">
             <img onClick = {handlerClickDetail} src={pictureUrl} alt={title} />
           </figure>
         </div>

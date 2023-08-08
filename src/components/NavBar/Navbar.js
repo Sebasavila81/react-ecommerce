@@ -1,4 +1,5 @@
 import CartWidget from "../CartWidget/CartWidget"
+import {Link} from "react-router-dom"
 
 const NavBar = () => {
     return (
@@ -18,30 +19,16 @@ const NavBar = () => {
 
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-start">
-                        <a className="navbar-item">
-                            Inicio
-                        </a>
 
-                        <a className="navbar-item">
-                            Contacto
-                        </a>
-
+                      <Link className="navbar-item" to='/'>Inicio</Link>
+                      <Link className="navbar-item" to='/contacto'>Contacto</Link>
                         <div className="navbar-item has-dropdown is-hoverable">
-                            <a className="navbar-link">
-                                Productos
-                            </a>
+                        <Link className="navbar-item" to='/productos'>Productos</Link>
 
                             <div className="navbar-dropdown">
-                                <a className="navbar-item">
-                                    Proteinas
-                                </a>
-                                <a className="navbar-item">
-                                    Creatinas
-                                </a>
-                                <a className="navbar-item">
-                                    Quemadores
-                                </a>
-
+                            <Link className="navbar-item" to='/categoria/1'>Proteina</Link>
+                            <Link className="navbar-item" to='/categoria/2'>Creatina</Link>
+                            <Link className="navbar-item" to='/categoria/3'>Quemadores</Link>
                             </div>
                         </div>
                     </div>
