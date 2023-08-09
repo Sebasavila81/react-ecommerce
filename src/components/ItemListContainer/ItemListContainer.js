@@ -22,10 +22,8 @@ const ItemListContainer = ({ greeting }) => {
                                 </div>
                             </div>
 
-                            <div className="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
+                            <div className="content has-text-centered">
+                               <h1>Bienvenidos a Suplementos Perci</h1>  
                                
                             </div>
                         </div>
