@@ -1,3 +1,11 @@
+import {db} from "../config/firebase"
+import {getDocs, collection} from 'firebase/firestore'
+
+
+
+const productos = []
+
+/*
 const productos = [{
     id: 1,
     title: "Proteina",
@@ -29,27 +37,18 @@ const productos = [{
 
 ];
 
-export const getProductosAll = () => { return new Promise((resolve, reject) => {
-    setTimeout(() => {
-        let randomVariable = Math.floor(Math.random() * 10) + 1;
-        if (randomVariable > 8) {
-            reject("Error");
-        }
-        else {
-            resolve(productos);
-        }
-    }, 2000)
-})}
+*/
 
-export const getProductosByID = (productID) => { return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let randomVariable = Math.floor(Math.random() * 10) + 1;
-            if (randomVariable > 8) {
-                reject("Error");
-            }
-            else {
-                resolve(productos.find(prod => prod.id == productID));
-            }
-        }, 2000)
-    })
+export const getProductosAll = async () => { 
+    const itemsCollectionRef = collection(db, "productos")
+    const data = await getDocs(itemsCollectionRef)
+    const filteredData = data.docs.map( (doc) => ({...doc.data(), id: doc.id}))
+    console.log(filteredData)
+    return filteredData
+}
+
+
+export const getProductosByID = async (productID) => { 
+    const data = await getProductosAll()
+    return data.find( obj => obj.id == productID)
 }
