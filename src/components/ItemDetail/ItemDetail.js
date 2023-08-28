@@ -1,9 +1,22 @@
 import { useState, useEffect } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-
+import { Link } from 'react-router-dom'
+import { CartContext } from '../context/CartContext'
 
 const ItemDetail = ({ title, description, price, pictureUrl, stock, estadoModal, closeModal }) => {
+  
+  const [quantityAdded, setQuantityAdded] = useState(0)
 
+  const handelOnAdd = (quantity) => {
+    setQuantityAdded(quantity)
+
+    const item = {
+      id, title, price
+    }
+
+    addItem(item, quantity)
+    
+  }
   const handlerCerrarModal = () => {
     closeModal()
   }
@@ -32,7 +45,15 @@ const ItemDetail = ({ title, description, price, pictureUrl, stock, estadoModal,
 
           </section>
           <footer className="modal-card-foot">
-            <ItemCount initial={1} stock={stock}/>
+            {
+              quantityAdded > 0 ? (
+                <link to='/cart' className=''>Terminar compra</link>
+
+              ) : (
+                <ItemCount initial={1} stock={stock} onAdd={handelOnAdd}/>
+              )  
+            }
+            
           </footer>
         </div>
       </div>
