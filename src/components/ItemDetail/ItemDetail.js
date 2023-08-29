@@ -1,17 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 
-const ItemDetail = ({ title, description, price, pictureUrl, stock, estadoModal, closeModal }) => {
+const ItemDetail = ({ id, title, description, price, pictureUrl, stock, estadoModal, closeModal }) => {
   
   const [quantityAdded, setQuantityAdded] = useState(0)
-
+  
+  const {addItem} = useContext(CartContext)
+  
   const handelOnAdd = (quantity) => {
     setQuantityAdded(quantity)
 
     const item = {
-      id, title, price
+      id:id, title:title, price:price
     }
 
     addItem(item, quantity)
@@ -47,7 +49,7 @@ const ItemDetail = ({ title, description, price, pictureUrl, stock, estadoModal,
           <footer className="modal-card-foot">
             {
               quantityAdded > 0 ? (
-                <link to='/cart' className=''>Terminar compra</link>
+                <Link to='/cart' className=''>Terminar compra</Link>
 
               ) : (
                 <ItemCount initial={1} stock={stock} onAdd={handelOnAdd}/>

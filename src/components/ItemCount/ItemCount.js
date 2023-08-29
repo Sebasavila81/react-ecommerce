@@ -37,7 +37,7 @@ const ItemCount = () => {
     }
     const [contador, setContador] = useState(0);
 
-    console.log(stock)
+
 
     return (
         <div className="columns">
