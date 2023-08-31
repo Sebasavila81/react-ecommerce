@@ -9,7 +9,7 @@ const ItemDetail = ({ id, title, description, price, pictureUrl, stock, estadoMo
   
   const {addItem} = useContext(CartContext)
   
-  const handelOnAdd = (quantity) => {
+  const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity)
 
     const item = {
@@ -52,7 +52,7 @@ const ItemDetail = ({ id, title, description, price, pictureUrl, stock, estadoMo
                 <Link to='/cart' className=''>Terminar compra</Link>
 
               ) : (
-                <ItemCount initial={1} stock={stock} onAdd={handelOnAdd}/>
+                <ItemCount initial={1} stock={stock} idProducto={id} onAdd={handleOnAdd}/>
               )  
             }
             

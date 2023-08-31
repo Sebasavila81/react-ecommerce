@@ -1,17 +1,31 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { CartContext } from "../context/CartContext";
 
-let stock = 10;
+const ItemCount = ({idProducto, precioProducto, stockProducto}) => {
+    const { cart, clearCart, totalQuantity, total} = useContext(CartContext)
+    let encontrarCarrito = cart.filter( e => e.idProducto == idProducto)
+    let stockCarrito = 0
+    encontrarCarrito.length ? stockCarrito = encontrarCarrito[0].cantidad : stockCarrito = 0
+    let stock = 0
+    stockCarrito ? stock = stockProducto-stockCarrito : stock = stockProducto
 
+    console.log(stockCarrito)
 
+    function actualizarCarrito(cantidad){
+        const cart2 = cart.map( e => e.idProducto == idProducto ? {...e, cantidad: e.cantidad+cantidad} : e)
+        cart.length=0
+        cart.push(...cart2)
 
-const ItemCount = () => {
-
+    }
     function handleClickOnAdd() {
         if (contador != 0) {
             if (stock >= contador) {
                 stock = stock - contador
+                stockCarrito ? actualizarCarrito(contador) : cart.push({idProducto, precioProducto, cantidad: contador})
+                console.log(stockCarrito)
+                console.log(cart)
                 toast.success('Pedido Agregado al Carrito');
             }
             else {
